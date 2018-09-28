@@ -13,4 +13,4 @@ if n == 'yes':
          time.sleep(0.025)
     print('\nХорошо сделано !!!\n')
 else:
-    print('ну и хуй с тобой .i.')
+    print('ну и ладно')
