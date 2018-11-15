@@ -10,7 +10,7 @@
 
 
 with open('1.txt', 'r') as f:
-  s = f.read().strip()
+    s = f.read().strip()
 
 s = [str(i).lower() for i in s.split()]
 
