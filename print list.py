@@ -3,4 +3,4 @@
 
 list_ = [1, 2, 3, 4, 'q', '{', 'r', 'T', ']', 'nhg', '1r#', ]
 
-print(*list_[:-1], str(list_[-1]) + '.',sep=', ')
+print(*list_[:-1], str(list_[-1]) + '.', sep=', ')
