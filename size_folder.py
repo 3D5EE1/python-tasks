@@ -4,11 +4,10 @@ import sys
 commands = sys.argv[1:]
 
 folder_list = [i for i in os.walk('.')]
-key_list = ['.', './', '--no-files', '--no-folder', '-h', '--help', '-K', '--Kb', '-M', '--Mb', '-G', '--Gb',]
+key_list = ['.', './', '--no-files', '--no-folders', '-h', '--help', '-K', '--Kb', '-M', '--Mb', '-G', '--Gb', ]
 
 
 class SizeFolder:
-    sum = 0
 
     def __init__(self, units, folders=None):
 
@@ -34,8 +33,7 @@ class SizeFolder:
                 total_size += os.path.getsize(fp)
         return total_size
 
-    def size_b(self):
-        print(f'{self.units}\t\tElements\n')
+    def size_folders(self):
         for i in self.folders:
             size = self.get_size(i)
             print(f'{round(size/self.factor, 2)}\t\t{i}')
@@ -66,22 +64,47 @@ class SizeFolder:
 
 def main():
     if len(commands) == 0:
-        SizeFolder('Kb').size_b()
+        SizeFolder('Kb').size_folders()
         SizeFolder('Kb').size_files()
     elif len(commands) == 1:
-        if commands[0] in key_list[:3]:
-            SizeFolder('Kb').size_b()
+        if commands[0] in key_list[:2]:
+            SizeFolder('Kb').size_folders()
             SizeFolder('Kb').size_files()
         elif commands[0] in key_list[4:6]:
             SizeFolder('Kb').help()
-
+        elif commands[0] in key_list[6:8]:
+            SizeFolder('Kb').size_folders()
+            SizeFolder('Kb').size_files()
+        elif commands[0] in key_list[8:10]:
+            SizeFolder('Mb').size_folders()
+            SizeFolder('Mb').size_files()
+        elif commands[0] in key_list[9:]:
+            SizeFolder('Gb').size_folders()
+            SizeFolder('Gb').size_files()
+        elif commands[0] in key_list[2]:
+            SizeFolder('Kb').size_folders()
+        elif commands[0] in key_list[3]:
+            SizeFolder('Kb').size_files()
+    elif len(commands) > 1:
+        if commands[0] in key_list[6:8] or commands[1] in key_list[6:8]:
+            if (commands[0] or commands[1]) in key_list[2]:
+                SizeFolder('Kb').size_folders()
+            elif (commands[0] or commands[1]) in key_list[3]:
+                SizeFolder('Kb').size_files()
+        elif commands[0] in key_list[8:10] or commands[1] in key_list[8:10]:
+            if (commands[0] or commands[1]) in key_list[2]:
+                SizeFolder('Mb').size_folders()
+            elif (commands[0] or commands[1]) in key_list[3]:
+                SizeFolder('Mb').size_files()
+        elif commands[0] in key_list[9:] or commands[1] in key_list[9:]:
+            if (commands[0] or commands[1]) in key_list[2]:
+                SizeFolder('Gb').size_folders()
+            elif (commands[0] or commands[1]) in key_list[3]:
+                SizeFolder('Gb').size_files()
     else:
         print(f'что-то пошло не так, воспользуйтесь помощью: -h или --help')
 
 
 if __name__ == '__main__':
     main()
-
-
-
 
