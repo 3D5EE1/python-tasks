@@ -10,9 +10,9 @@
 arg1 arg2
 '''
 
-import sys
+import my_sys
 
-c = sys.argv[1:]
+c = my_sys.argv[1:]
 
 for i in range(len(c)):
     print(c[i], end=" ")
