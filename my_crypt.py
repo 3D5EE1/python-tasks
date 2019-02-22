@@ -18,3 +18,7 @@ for p in passes.split():
     pass
   else:
     print(p, s)
+
+
+def crypt(i, id):
+    return None
