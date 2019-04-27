@@ -14,30 +14,42 @@ for i in my_list:
 my_list[y][x] = '+'
 
 while exit_cursor:
-    cursor: str = input('\nввудите \'w\',\'s\',\'a\',\'d\' для движения внутри квадрата: ')
+    cursor: str = input('\nввудите \'w\',\'s\',\'a\',\'d\' или \'exit\' для выхода для движения внутри квадрата: ')
     print()
-    if cursor == 'd':
+    if cursor == 'exit':
+        exit_cursor = False
+        break
+
+    elif cursor == 'd':
         x += 1
         if x > len(my_list[y])-1:
             x = 0
 
-    if cursor == 'a':
+    elif cursor == 'a':
         x -= 1
         if x < 0:
             x = len(my_list[y])-1
 
-    if cursor == 'w':
+    elif cursor == 'w':
         y -= 1
         if y < 0:
             y = len(my_list)-1
 
-    if cursor == 's':
+    elif cursor == 's':
         y += 1
         if y > len(my_list)-1:
             y = 0
+
+    elif cursor not in ['w', 's', 'a', 'd']:
+        print('вы ввели не верное значение')
+        continue
 
     my_list[y][x] = 'O'
     os.system('cls')
     for i in my_list:
         print(*i, end='\n')
     my_list[y][x] = '+'
+
+
+
+
