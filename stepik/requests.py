@@ -17,8 +17,6 @@ with open('1.txt', 'r') as f:
 
 #t = https://stepic.org/media/attachments/course67/3.6.2/349.txt
 
-import requests
-
 r = requests.get(t)
 print(r.text)
 

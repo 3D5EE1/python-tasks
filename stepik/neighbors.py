@@ -18,10 +18,10 @@ result = 0
 index = 0
 
 for i in list:
-  if len(list) == 3:
-    print(list[0])
-    break
-  if index <= len(list) - 3:
-    result = list[index - 1] + list[index + 1]
-    index += 1
- print(result, end = ' ')
+    if len(list) == 3:
+        print(list[0])
+        break
+    if index <= len(list) - 3:
+        result = list[index - 1] + list[index + 1]
+        index += 1
+    print(result, end = ' ')

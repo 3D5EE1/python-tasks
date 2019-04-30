@@ -16,25 +16,25 @@ a = float(input()) #первое чисто
 b = float(input()) #второе число
 c = input() #действие
 if c == '+':
-  result = a + b
-  print(result)
+    result = a + b
+    print(result)
 elif c == '-':
-  result = a - b
-  print(result)
+    result = a - b
+    print(result)
 elif c == '*':
-  result = a * b
-  print(result)
+    result = a * b
+    print(result)
 elif c == '/' and b != 0:
-  result = a / b
-  print(result)
+    result = a / b
+    print(result)
 elif c == 'mod' and b != 0:
-  result = a % b
-  print(result)
+    result = a % b
+    print(result)
 elif c == 'pow':
-  result = a ** b
-  print(result)
+    result = a ** b
+    print(result)
 elif c == 'div' and b != 0:
-  result = a // b
-  print(result)
+    result = a // b
+    print(result)
 elif b == 0:
-  print("Деление на 0!")
+    print("Деление на 0!")

@@ -10,8 +10,6 @@
 arg1 arg2
 '''
 
-import my_sys
-
 c = my_sys.argv[1:]
 
 for i in range(len(c)):

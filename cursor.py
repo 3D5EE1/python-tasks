@@ -1,20 +1,38 @@
 import os
 
-x = 0
-y = 0
+
+def draw_canvas(clear=None) -> None:
+
+    my_list[y][x] = 'O'
+
+    if clear is None:
+        pass
+    else:
+        os.system('cls')
+
+    for i in my_list:
+        print(*i, end='\n')
+
+    my_list[y][x] = '+'
+
+
 exit_cursor = True
 
-res: list = input('введите размер квадрата, два числа через пробел: ').split()
+res: list = input('введите два числа через пробел, которые зададут размер холста: ').split()
+
 my_list = [['+' for i in range(int(res[0]))] for j in range(int(res[1]))]
-print('вы находитесь в положении ( 0 : 0 )\n')
+
+x = len(my_list[0]) // 2
+y = len(my_list) // 2
+
+print(f'вы находитесь в положении ( x:{x}, y:{y} )\n')
+
 my_list[y][x] = 'O'
 
-for i in my_list:
-    print(*i, end='\n')
-my_list[y][x] = '+'
+draw_canvas()
 
 while exit_cursor:
-    cursor: str = input('\nввудите \'w\',\'s\',\'a\',\'d\' или \'exit\' для выхода для движения внутри квадрата: ')
+    cursor: str = input('\nввудите \'w\',\'s\',\'a\',\'d\' для движения внутри квадрата или \'exit\' для выхода : ')
     print()
     if cursor == 'exit':
         exit_cursor = False
@@ -44,11 +62,9 @@ while exit_cursor:
         print('вы ввели не верное значение')
         continue
 
-    my_list[y][x] = 'O'
-    os.system('cls')
-    for i in my_list:
-        print(*i, end='\n')
-    my_list[y][x] = '+'
+    draw_canvas('clear')
+
+
 
 
 

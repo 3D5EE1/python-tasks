@@ -9,7 +9,7 @@ https://stepic.org/media/attachments/course67/3.6.3/
 Загрузите содержимое ﻿последнего файла из набора, как ответ на это задание.
 '''
 
-import requests
+from stepik import requests
 
 enter = 'https://stepic.org/media/attachments/course67/3.6.3/699991.txt'
 

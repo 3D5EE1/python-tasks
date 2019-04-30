@@ -17,11 +17,11 @@ count = 1
 
 
 for i in code:
-  if j < len(code) and i == code[j]:
-  count += 1
-  j += 1
-  else:
-  tt = tt + str(i) + str(count)
-  count = 1
-  j += 1
+    if j < len(code) and i == code[j]:
+        count += 1
+        j += 1
+    else:
+        tt = tt + str(i) + str(count)
+        count = 1
+        j += 1
 print(tt)

@@ -1,4 +1,4 @@
-import my_sys
+from stepik import my_sys
 
 num_steps = int(my_sys.argv[1])
 
